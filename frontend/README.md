@@ -1,34 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wine Table CRUD App
 
-## Getting Started
+This is a Wine Table CRUD application built with Next.js for the frontend and Express.js for the backend. It allows you to perform basic CRUD operations (Create, Read, Update, Delete) on wine data.
 
-First, run the development server:
+## Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Node.js (version 14 or above) and npm (Node Package Manager) should be installed on your machine.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Backend Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Navigate to the `backend` directory: `cd backend`
+2. Install the dependencies: `npm install`
+3. Start the backend server: `npm run dev`
+4. The backend server will start running at `http://localhost:5000`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Frontend Setup
 
-## Learn More
+1. Navigate to the `frontend` directory: `cd frontend`
+2. Install the dependencies: `npm install`
+3. Start the frontend development server: `npm run dev`
+4. The frontend application will be accessible at `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Open your web browser and visit `http://localhost:3000` to access the Wine Table CRUD application.
+2. You can perform CRUD operations on the wine data using the provided user interface.
+3. Any changes made will be reflected in real-time.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Additional Information
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The backend server runs on port 5000, and the frontend development server runs on port 3000. Make sure these ports are available on your machine.
+- The backend API endpoints are prefixed with `/wines` for fetching all wines or `/wines/{id}` for fetching a specific wine by its ID.
+- The frontend application interacts with the backend API to perform CRUD operations.
+- Make sure to configure the backend API URL in the frontend code (in the `apiUrl` variable) to match the actual backend server URL.

@@ -1,23 +1,32 @@
-
 # TypeScript API with TypeORM
 
 ## Run this project
 
 - Install the dependencies:
+
 ```
-yarn
+npm i
 ```
+
 - Run the app:
+
 ```
-yarn start:dev
+npm run dev
 ```
+
 ## Build and Run
+
 - Install the dependencies:
+
 ```
-yarn
+npm i
 ```
+
 - Build and run the app:
+
 ```
-yarn build
-yarn start:prod
+npm build
+npm run prod
 ```
+
+runs the server on [http://localhost:5000](http://localhost:5000)

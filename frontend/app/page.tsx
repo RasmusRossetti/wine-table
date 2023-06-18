@@ -8,7 +8,13 @@ import { Suspense } from "react"
 
 async function getWines() {
   "use client"
-  const res = await fetch(`http://localhost:5000/wines`, { cache: "no-store" })
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+
+  if (!apiUrl) {
+    throw new Error("API URL is not defined")
+  }
+
+  const res = await fetch(apiUrl, { cache: "no-store" })
 
   if (!res.ok) {
     throw new Error("Failed to fetch data")
