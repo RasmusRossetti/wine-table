@@ -4,4 +4,5 @@ export interface Wine {
   year: number
   region: string
   producer: string
+  id: string
 }

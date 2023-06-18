@@ -1,4 +1,5 @@
 import { url } from "@/assets/image"
+import { Button } from "@/components/deletebutton/Button"
 import { Header } from "@/components/header/Header"
 import { Modal } from "@/components/modal/Modal"
 import { Wine } from "@/models/Wine"
@@ -32,43 +33,53 @@ export default async function Home() {
             </div>
 
             <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-              Customers also purchased
+              Availability to add and update wines
             </h2>
             <div className=" mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {WinesData?.map((wine: Wine) => (
-                <div key={wine.name} className="group relative">
-                  <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                    <Image
-                      src={url}
-                      alt={wine.name}
-                      width={800}
-                      height={500}
-                      className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                    />
-                  </div>
-                  <div className="mt-4 flex justify-between">
-                    <div>
-                      <h3 className="text-sm text-gray-700">
-                        <a href={wine.producer}>
-                          <span
-                            aria-hidden="true"
-                            className="absolute inset-0"
-                          />
-                          {wine.producer}
-                        </a>
-                      </h3>
-                      <p className="mt-1 text-sm text-gray-500">
-                        {wine.region}
-                      </p>
-                      <p className="mt-1 text-sm text-gray-500 font-medium">
-                        {wine.name}
+                <>
+                  <div key={wine.name} className="group relative">
+                    <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none  lg:h-80">
+                      <Image
+                        src={url}
+                        alt={wine.name}
+                        width={800}
+                        height={500}
+                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                      />
+                    </div>
+                    <div className="mt-4 flex justify-between">
+                      <div>
+                        <h3 className="text-sm text-gray-700">
+                          <div>
+                            <span
+                              aria-hidden="true"
+                              className="absolute inset-0"
+                            />
+                            {wine.producer}
+                          </div>
+                        </h3>
+                        <p className="mt-1 text-sm text-gray-500">
+                          {wine.region}
+                        </p>
+                        <p className="mt-1 text-sm text-gray-500 font-medium">
+                          {wine.name}
+                        </p>
+                      </div>
+                      <p className="text-sm font-medium text-gray-900">
+                        {wine.year}
                       </p>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">
-                      {wine.year}
-                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="relative">
+                        <Modal wineId={wine.id} />
+                      </div>
+                      <div className="relative">
+                        <Button wineId={wine.id} />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </>
               ))}
             </div>
           </div>

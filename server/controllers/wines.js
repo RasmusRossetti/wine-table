@@ -25,7 +25,7 @@ export const updateWine = (req, res) => {
   const wine = wines.find((wine) => wine.id === req.params.id)
 
   wine.name = req.body.name
-  wine.grapes = req.body.grape
+  wine.grape = req.body.grape
   wine.year = req.body.year
   wine.region = req.body.region
   wine.producer = req.body.producer
