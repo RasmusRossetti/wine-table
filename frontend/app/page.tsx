@@ -6,7 +6,7 @@ import { Wine } from "@/models/Wine"
 import Image from "next/image"
 import { Suspense } from "react"
 
-async function getWines() {
+async function getWines(): Promise<any[]> {
   "use client"
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
@@ -22,7 +22,7 @@ async function getWines() {
   return res.json()
 }
 
-export default async function Home() {
+export default async function Home(): Promise<JSX.Element> {
   const WinesData = await getWines()
 
   return (
