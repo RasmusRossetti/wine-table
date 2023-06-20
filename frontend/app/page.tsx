@@ -7,7 +7,6 @@ import Image from "next/image"
 import { Suspense } from "react"
 
 async function getWines(): Promise<any[]> {
-  "use client"
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
   if (!apiUrl) {
