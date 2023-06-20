@@ -6,7 +6,7 @@ import { Wine } from "@/models/Wine"
 import Image from "next/image"
 import { Suspense } from "react"
 
-async function getWines(): Promise<any[]> {
+async function getWines(): Promise<Wine[]> {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
   if (!apiUrl) {
